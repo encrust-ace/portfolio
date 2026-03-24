@@ -56,7 +56,10 @@ export default function App() {
           <feDisplacementMap in="SourceGraphic" in2="intenseNoise" scale="120" xChannelSelector="R" yChannelSelector="G" />
         </filter>
       </svg>
-      <div className="black-hole-warp"></div>
+      <div 
+        className="black-hole-warp" 
+        style={{ backdropFilter: 'url(#blackhole-warp)', WebkitBackdropFilter: 'url(#blackhole-warp)' }}
+      ></div>
       <nav className="navbar">
         <div className="nav-container">
           <Link to="/" className="nav-logo">Imran Khan</Link>
