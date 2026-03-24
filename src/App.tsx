@@ -5,7 +5,7 @@ import "./index.css";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/portfolio">
       <nav className="navbar">
         <div className="nav-container">
           <Link to="/" className="nav-logo">Imran Khan</Link>
