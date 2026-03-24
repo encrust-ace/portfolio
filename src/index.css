@@ -277,3 +277,20 @@ a:hover {
   margin-bottom: 1rem;
   color: var(--text-secondary);
 }
+
+/* DOM Distortion Field */
+.black-hole-warp {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 400px;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(calc(var(--mouse-x, -100vw) - 200px), calc(var(--mouse-y, -100vh) - 200px));
+  /* Connects to the SVG filter in App.tsx to physically tear and warp the UI */
+  backdrop-filter: url(#blackhole-warp);
+  -webkit-backdrop-filter: url(#blackhole-warp);
+  mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 20%, transparent 50%);
+  -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 20%, transparent 50%);
+}
