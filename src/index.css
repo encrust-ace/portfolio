@@ -57,23 +57,40 @@ a:hover {
 
 /* Navbar */
 .navbar {
-  background-color: var(--navbar-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   position: fixed;
   top: 1.5rem;
   left: 50%;
-  transform: translateX(-50%);
   width: calc(100% - 10vw);
   max-width: 1500px;
   border-radius: 100px;
-  border: 1px solid var(--border-color);
   z-index: 100;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
-  transition: all 0.3s ease;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-style: preserve-3d;
 }
 
-.dark .navbar {
+/* Settled at Top */
+.navbar.nav-top {
+  transform: translateX(-50%) translateY(0.5rem) perspective(1000px) translateZ(-20px) rotateX(-5deg);
+  background-color: transparent;
+  border: 1px solid transparent;
+  box-shadow: none;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+}
+
+/* Floating (Popped out - Anywhere else) */
+.navbar.nav-floating,
+.navbar.nav-top:hover {
+  transform: translateX(-50%) translateY(0) perspective(1000px) translateZ(0) rotateX(0deg);
+  background-color: var(--navbar-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+.dark .navbar.nav-floating,
+.dark .navbar.nav-top:hover {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
   border: 1px solid rgba(255, 255, 255, 0.15);
 }

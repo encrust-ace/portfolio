@@ -11,6 +11,7 @@ export default function App() {
   const [theme, setTheme] = useState<Theme>(() => {
     return (localStorage.getItem("theme") as Theme) || "system";
   });
+  const [navState, setNavState] = useState<"top" | "floating">("top");
 
   useEffect(() => {
     localStorage.setItem("theme", theme);
@@ -43,11 +44,23 @@ export default function App() {
     }
     link.href = appIcon;
     document.title = "Imran Khan | Portfolio";
+
+    const handleScroll = () => {
+      if (window.scrollY < 50) {
+        setNavState("top");
+      } else {
+        setNavState("floating");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // Trigger instantly on mount
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <BrowserRouter basename="/portfolio">
-      <nav className="navbar">
+      <nav className={`navbar nav-${navState}`}>
         <div className="nav-container">
           <Link to="/" className="nav-logo">IK.</Link>
           <select 
