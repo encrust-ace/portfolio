@@ -12,12 +12,12 @@ export default function CliniSyncPage() {
     <div className="page fade-in">
       <header className="hero">
         <img src={appIcon} alt="CliniSync App Icon" style={{ width: '80px', height: '80px', margin: '0 auto 1.5rem', display: 'block' }} />
-        <h1 className="hero-title">Clini<span style={{ color: 'var(--accent-color)' }}>Sync</span></h1>
-        <h2 className="hero-subtitle">Streamline your clinic with confidence.</h2>
-        <p className="hero-bio">
+        <h1 className="hero-title" style={{ textAlign: 'center' }}>Clini<span style={{ color: 'var(--text-secondary)' }}>Sync.</span></h1>
+        <h2 className="hero-subtitle" style={{ textAlign: 'center' }}>Streamline your clinic with confidence.</h2>
+        <p className="hero-bio" style={{ margin: '0 auto', textAlign: 'center' }}>
           The ultimate all-in-one solution for modern healthcare providers. Manage patient records, track appointments, and handle your clinic's operations effortlessly.
         </p>
-        <div className="hero-actions">
+        <div className="hero-actions" style={{ justifyContent: 'center' }}>
           <button className="btn" onClick={() => window.open('https://apps.microsoft.com/detail/9nz237jdmpm2?hl=en-GB&gl=IN', '_blank')}>
             Download on Windows
           </button>

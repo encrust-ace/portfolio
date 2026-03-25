@@ -5,8 +5,8 @@ export default function Home() {
   return (
     <div className="page fade-in">
       <header className="hero">
-        <h1 className="hero-title">Imran Khan</h1>
-        <h2 className="hero-subtitle">Creative Full Stack Developer & Hardware Tinkerer</h2>
+        <h1 className="hero-title">IMRAN<br/>KHAN.</h1>
+        <h2 className="hero-subtitle">Creative Full Stack Developer <br/>& Hardware Tinkerer.</h2>
         <p className="hero-bio">
           I build intuitive, scalable web experiences using modern JavaScript frameworks and bridge the gap between digital interfaces and the physical world through IoT and smart home automation.
         </p>
@@ -46,7 +46,9 @@ export default function Home() {
             <p>
               The all-in-one clinical management app for doctors and healthcare professionals to effortlessly manage patients, appointments, digital prescriptions, and billing.
             </p>
-            <Link to="/clini-sync" className="btn">View Project Details</Link>
+            <Link to="/clini-sync" className="btn" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem' }}>
+              View Project Details <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </Link>
           </div>
         </div>
       </section>

@@ -43,37 +43,13 @@ export default function App() {
     }
     link.href = appIcon;
     document.title = "Imran Khan | Portfolio";
-
-    const handleMouseMove = (e: MouseEvent) => {
-      document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
-      document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
   }, []);
 
   return (
     <BrowserRouter basename="/portfolio">
-      {/* Invisible SVG filter for physical pixel tearing/warping */}
-      <svg width="0" height="0" style={{ position: 'absolute', pointerEvents: 'none', zIndex: -1 }}>
-        <filter id="blackhole-warp" x="-20%" y="-20%" width="140%" height="140%">
-          <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="2" result="noise">
-            <animate attributeName="baseFrequency" values="0.008; 0.012; 0.008" dur="4s" repeatCount="indefinite" />
-          </feTurbulence>
-          <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -8" in="noise" result="intenseNoise" />
-          <feDisplacementMap in="SourceGraphic" in2="intenseNoise" scale="120" xChannelSelector="R" yChannelSelector="G" />
-        </filter>
-      </svg>
-      <div 
-        className="black-hole-warp" 
-        style={{ backdropFilter: 'url(#blackhole-warp)', WebkitBackdropFilter: 'url(#blackhole-warp)' }}
-      ></div>
       <nav className="navbar">
         <div className="nav-container">
-          <Link to="/" className="nav-logo">Imran Khan</Link>
+          <Link to="/" className="nav-logo">IK.</Link>
           <select 
             value={theme} 
             onChange={(e) => setTheme(e.target.value as Theme)}
@@ -85,7 +61,7 @@ export default function App() {
           </select>
         </div>
       </nav>
-      <main className="container">
+      <main className="container" style={{ paddingTop: '6rem' }}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/clini-sync" element={<CliniSync />} />
