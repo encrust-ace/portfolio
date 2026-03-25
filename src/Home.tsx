@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import appIcon from "./assets/clini-sync-hero.png";
 
 export default function Home() {
   return (
@@ -37,7 +38,10 @@ export default function Home() {
         <h2 className="section-title">Projects</h2>
         <div className="project-card">
           <div className="project-card-content">
-            <h3>Clini Sync</h3>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
+              <img src={appIcon} alt="Clini Sync Logo" style={{ width: '40px', height: '40px' }} />
+              <h3 style={{ margin: 0 }}>Clini Sync</h3>
+            </div>
             <p className="project-tagline">Smart Clinic Management</p>
             <p>
               The all-in-one clinical management app for doctors and healthcare professionals to effortlessly manage patients, appointments, digital prescriptions, and billing.

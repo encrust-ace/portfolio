@@ -277,3 +277,170 @@ a:hover {
   margin-bottom: 1rem;
   color: var(--text-secondary);
 }
+
+/* Utility Buttons */
+.btn-outline {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+.btn-outline:hover {
+  background-color: var(--surface-hover);
+  color: var(--text-primary);
+  border-color: var(--text-secondary);
+}
+.btn-block {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: auto;
+}
+button {
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.section-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+  margin-top: -1rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Feature Grid for CliniSync Page */
+.feature-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.feature-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .feature-item {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+  .feature-item.reverse .feature-content {
+    order: 2;
+  }
+  .feature-item.reverse .feature-image {
+    order: 1;
+  }
+}
+.feature-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+.feature-content p {
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+}
+.feature-image img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+.dark .feature-image img {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Pricing Grid for CliniSync Page */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  align-items: stretch;
+  margin-bottom: 2rem;
+}
+.pricing-card {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.pricing-card:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-4px);
+}
+.pricing-card.pro {
+  border-color: var(--accent-color);
+  background-color: var(--surface-hover);
+}
+.pricing-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+.pricing-desc {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  min-height: 3.5rem;
+}
+.price {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+.price span {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+.feature-list {
+  list-style: none;
+  margin-bottom: 2.5rem;
+  flex-grow: 1;
+}
+.feature-list li {
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.feature-list li.inactive {
+  color: var(--text-secondary);
+  opacity: 0.6;
+}
+.check-icon {
+  color: var(--accent-color);
+  flex-shrink: 0;
+}
+.badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--accent-color);
+  color: #fff;
+  padding: 0.25rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.pricing-disclaimer {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}

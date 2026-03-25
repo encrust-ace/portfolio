@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Link, Navigate } from "react-router-dom";
 import Home from "./Home";
 import CliniSync from "./CliniSync";
 import "./index.css";
+import appIcon from "./assets/clini-sync-hero.png";
 
 type Theme = "system" | "light" | "dark";
 
@@ -33,6 +34,16 @@ export default function App() {
   }, [theme]);
 
   useEffect(() => {
+    // Dynamically replace the default Vite favicon with the app icon
+    let link = document.querySelector("link[rel~='icon']") as HTMLLinkElement;
+    if (!link) {
+      link = document.createElement('link');
+      link.rel = 'icon';
+      document.head.appendChild(link);
+    }
+    link.href = appIcon;
+    document.title = "Imran Khan | Portfolio";
+
     const handleMouseMove = (e: MouseEvent) => {
       document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
       document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
